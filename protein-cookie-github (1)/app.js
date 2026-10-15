@@ -34,17 +34,38 @@ const guildData = {
       wide: true,
       items: [
         { 
-  title: '경험치던전', 
-  description: '손컨X (클릭하여 보기)', 
+  title: '일일던전', 
+  description: '경험치·반죽·코인·연구석·룬결정 모음 (클릭)', 
   tag: 'DAILY', 
-  url: '#modal', 
-  imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png',
-  extraDesc: '• 배치 팁: 중앙 기둥을 기준으로 좌우 배치를 다르게 하세요.<br>• 주의사항: 스킬 쿨타임 관리가 중요합니다.' 
+  url: '#modal',
+  dungeons: [
+    {
+      name: '경험치 던전',
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png',
+      desc: '손컨 X<br>• 배치 팁: 중앙 기둥을 기준으로 좌우 배치를 다르게 하세요.'
+    },
+    {
+      name: '반죽 던전',
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png',
+      desc: '손컨 X<br>• 주의사항: 스킬 쿨타임 관리가 중요합니다.'
+    },
+    {
+      name: '코인 던전',
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-a417f6dd-1b59-4f18-86b3-e07aea160cd3.png',
+      desc: '시작하고 2시 방향<br>• 방향 맞춰서 빠르게 진입하세요.'
+    },
+    {
+      name: '연구석 던전',
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png',
+      desc: '시작하고 7시 방향<br>• 안전하게 이동 후 자리를 잡습니다.'
+    },
+    {
+      name: '룬결정 던전',
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-79642bfc-7386-43c2-ad67-13505be044c2.png',
+      desc: '손컨 X<br>• 무난하게 오토로 돌릴 수 있는 구간입니다.'
+    }
+  ]
 },
-        { title: '반죽던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png' },
-        { title: '코인던전', description: '시작하고 2시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-a417f6dd-1b59-4f18-86b3-e07aea160cd3.png' },
-        { title: '연구석던전', description: '시작하고 7시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png' },
-        { title: '룬결정던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-79642bfc-7386-43c2-ad67-13505be044c2.png' },
         { title: '길드토벌전', description: '토벌전 덱 입니다', tag: 'GUILDBATTLE', url: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png' },
         { title: '장비프리셋', description: '스테이지, 길드토벌전 장비 추천입니다', tag: 'EQUIPMENT', url: 'https://cdn.phototourl.com/member/2026-10-15-3e46ca52-8bd4-417e-91cf-34e0e34e8664.png' },
       ]
