@@ -315,7 +315,3 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
 .modal__body::-webkit-scrollbar-thumb:hover {
   background: var(--orange, #ff9c61);
 }
-/* --- 윈도우 기본 크기에 맞춘 정확한 연두색 커스텀 마우스 커서 --- */
-body, a, button, .link-card, .anchor-nav__item, .icon-button {
-  cursor: url('https://cdn.phototourl.com/member/2026-10-16-cursor-green-proper.png') 2 2, auto !important;
-}
