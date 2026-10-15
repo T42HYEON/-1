@@ -42,12 +42,12 @@ const guildData = {
     {
       name: '경험치 던전',
       imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png',
-      desc: '손컨 X<br>• 배치 팁: 중앙 기둥을 기준으로 좌우 배치를 다르게 하세요.'
+      desc: '오토덱<br>• 배치 팁: 그냥 놔두면 깨져요.'
     },
     {
       name: '반죽 던전',
       imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png',
-      desc: '손컨 X<br>• 주의사항: 스킬 쿨타임 관리가 중요합니다.'
+      desc: '오토덱<br>• 배치 팁: 그냥 놔두면 깨지는데 타임아웃되면 5시방향 이동'
     },
     {
       name: '코인 던전',
@@ -57,12 +57,12 @@ const guildData = {
     {
       name: '연구석 던전',
       imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png',
-      desc: '시작하고 7시 방향<br>• 안전하게 이동 후 자리를 잡습니다.'
+      desc: '시작하고 7시 방향<br>• 7시방향으로 가면 몬스터를 시계방향으로 차례대로 잡아요.'
     },
     {
       name: '룬결정 던전',
-      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-79642bfc-7386-43c2-ad67-13505be044c2.png',
-      desc: '손컨 X<br>• 무난하게 오토로 돌릴 수 있는 구간입니다.'
+      imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-1233db6d-9ae7-4a02-b434-73b831905de3.png',
+      desc: '오토덱<br>• 찰스가 든든하게 다 맞아줘요.'
     }
   ]
 },
