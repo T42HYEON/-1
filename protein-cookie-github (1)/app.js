@@ -241,12 +241,25 @@ const modalClose = document.querySelector('#modalClose');
 const modalBody = document.querySelector('#modalBody');
 const modalTitle = document.querySelector('#modalTitle'); // ★ 제목 변경용 변수 추가
 
-function openModalGroup(title, encodedJson) { // ★ title 파라미터 추가
+const modalDesc = document.querySelector('#modalDesc'); // ★ 상단 설명글 조종용 변수 추가
+
+function openModalGroup(title, encodedJson) {
   if (modal && modalBody) {
     const dungeons = JSON.parse(decodeURIComponent(encodedJson));
     
-    // ★ 팝업창 상단 제목을 클릭한 카드의 이름으로 변경
+    // 팝업창 상단 제목 변경
     if (modalTitle) modalTitle.textContent = title;
+
+    // ★ 일일던전일 때만 상단 설명글을 보여주고, 토벌전이나 장비프리셋일 때는 깔끔하게 숨기기(비우기)
+    if (modalDesc) {
+      if (title === '일일던전') {
+        modalDesc.textContent = '손컨X 및 던전별 공략 모음';
+        modalDesc.style.display = 'block';
+      } else {
+        modalDesc.textContent = '';
+        modalDesc.style.display = 'none';
+      }
+    }
 
     modalBody.innerHTML = dungeons.map(d => `
       <div class="modal-item">
