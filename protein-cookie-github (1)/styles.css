@@ -134,3 +134,48 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
   .rules-grid { display: block; }.rule-card { min-height: auto; margin-bottom: 10px; padding: 16px; }.rule-card h3 { margin-top: 12px; }.rule-card__number { font-size: 23px; }.idea-card { display: block; margin-top: 78px; margin-bottom: 76px; padding-top: 32px; }.idea-card > p { margin: 22px 0; }.footer { display: block; padding-bottom: 100px; }.footer > p { margin-top: 15px; }.footer__line { display: block; margin: 24px 0 14px; }.floating-chat { right: 16px; bottom: 15px; }.toast { bottom: 87px; }
 }
 @media (max-width: 390px) { .hero__note { margin-right: -2px; }.link-card { min-height: 110px; }.link-card p { display: none; } }
+
+/* --- 맨 위로 가기 버튼 스타일 --- */
+#scrollTopBtn {
+  position: fixed;
+  right: max(22px, calc((100vw - 1100px) / 2));
+  bottom: 84px; /* .floating-chat 바로 위에 위치하도록 설정 */
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  background-color: var(--bg-raised, #171a28);
+  color: var(--ink, #f9f7f2);
+  border: 1px solid var(--line, rgba(255, 255, 255, .11));
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .27);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, background-color 0.25s ease;
+}
+
+/* 스크롤을 내려서 버튼이 활성화(is-visible) 되었을 때 */
+#scrollTopBtn.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-4px);
+  background-color: var(--bg-soft, #1d2030);
+}
+
+/* 모바일 화면 대응 (floating-chat과 겹치지 않게 위치 조절) */
+@media (max-width: 760px) {
+  #scrollTopBtn {
+    right: 16px;
+    bottom: 75px; /* 모바일에서 오픈채팅 버튼 위로 오도록 설정 */
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
