@@ -240,3 +240,45 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
   line-height: 1.6;
   text-align: left; /* 설명글이 길어지면 보기 편하게 왼쪽 정렬 */
 }
+/* 일일던전 통합 팝업 내부 스크롤 영역 스타일 */
+.modal__body {
+  max-height: 70vh; /* 화면이 너무 길어지면 내부에서 스크롤되도록 설정 */
+  overflow-y: auto;
+  padding-right: 4px;
+  margin-top: 15px;
+  text-align: left;
+}
+
+/* 팝업 안의 각 던전 아이템 박스 스타일 */
+.modal-item {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.modal-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.modal-item h4 {
+  margin: 0 0 6px;
+  font-family: Jua, sans-serif;
+  font-size: 18px;
+  color: var(--cream);
+}
+.modal-item img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  margin-top: 8px;
+}
+.modal-item .modal__extra-desc {
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--bg, #10121d);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted-strong);
+  font-size: 11px;
+  line-height: 1.5;
+}
