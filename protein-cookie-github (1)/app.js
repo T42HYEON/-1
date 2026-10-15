@@ -13,7 +13,7 @@ const guildData = {
       wide: false,
       items: [
         { title: '쿠키런: 크럼블 공식 포럼', description: '쿠키런: 크럼블 공식 사이트', tag: 'OFFICIAL', url: 'https://cookieruncrumble.com/ko' },
-        { title: '쿠키런: 크럼블 공식 카페', description: '공식 카페 소식과 커뮤니티', tag: 'CAFE', url: 'https://cafe.naver.com/ca-fe/ccrumble?tc=article' },
+        { title: '쿠키런: 크럼블 공식 카페', description: '공식 카페 소식과 커뮤니티', tag: 'CAFE', url: 'https://cafe.naver.com/ccrumble' },
         { title: '쿠키럼 크럼블 갤러리', description: '유저 이야기 & 메타', tag: 'COMMUNITY', url: 'https://m.dcinside.com/board/projectcc' }
       ]
     },
