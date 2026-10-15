@@ -33,7 +33,7 @@ const guildData = {
       icon: '▦',
       wide: true,
       items: [
-        { title: '일일던전 덱 추천', description: '던전별로 오토덱 또는 편한 덱 추천', tag: 'CSV 양식', url: 'https://crumbles.fun/builder?team=v2.0z24131016111v1m1g1b1k1r~020110&name=경험치던전+오토덱&leader=milk-pediatrician&perks=passion-pay,fast-promotion' },
+        { title: '일일던전 덱 추천', description: '던전별로 오토덱 또는 편한 덱 추천', tag: 'CRUMBLEFUN', url: 'https://crumbles.fun/builder?team=v2.0z24131016111v1m1g1b1k1r~020110&name=경험치던전+오토덱&leader=milk-pediatrician&perks=passion-pay,fast-promotion' },
         { title: '새 Google Sheets 만들기', description: '양식을 가져올 빈 시트 만들기', tag: 'GOOGLE SHEETS', url: 'https://docs.google.com/spreadsheets/create' }
       ]
     }
