@@ -33,12 +33,7 @@ const guildData = {
       icon: '▦',
       wide: true,
       items: [
-        { title: '길드전 덱 공략 시트', description: '이번 시즌 추천 덱 정리', tag: 'SHEET', url: 'https://docs.google.com/spreadsheets/d/길드전덱공략-예시' },
-        { title: '길드 출석부', description: '주간 출석 현황 체크', tag: 'SHEET', url: 'https://docs.google.com/spreadsheets/d/길드출석부-예시' },
-        { title: '보물 & 토핑 메모', description: '길드원 공유용 빌드 기록', tag: 'NOTE', url: 'https://docs.google.com/document/d/길드메모-예시' },
-        { title: '토벌전 피해량 기록표', description: '날짜·보스·덱·피해량 기록 양식', tag: 'CSV 양식', url: '/templates/guild-raid-log.csv' },
-        { title: '길드 주간 출석부 양식', description: '요일별 출석을 한눈에 체크', tag: 'CSV 양식', url: '/templates/guild-attendance.csv' },
-        { title: '쿠키·토핑 빌드 메모', description: '쿠키별 토핑·보물·콘텐츠 정리', tag: 'CSV 양식', url: '/templates/cookie-build-memo.csv' },
+        { title: '일일던전 덱 추천', description: '던전별로 오토덱 또는 편한 덱 추천', tag: 'CSV 양식', url: '/templates/cookie-build-memo.csv' },
         { title: '새 Google Sheets 만들기', description: '양식을 가져올 빈 시트 만들기', tag: 'GOOGLE SHEETS', url: 'https://docs.google.com/spreadsheets/create' }
       ]
     }
