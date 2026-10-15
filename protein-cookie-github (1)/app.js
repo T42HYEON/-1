@@ -42,11 +42,7 @@ const guildData = {
       ]
     }
   ],
-  notices: [
-    { title: '이번 주 길드전', text: '길드토벌전이 시작되었습니다! 열심히 해서 1등을 노려보자구욧!' },
-    { title: '출석 체크', text: '하루 한 번 접속 후 길드 출석을 눌러주세요. 3일 이상 미접속 시 따히님이나 래아님께 미리 알려주세요.' },
-    { title: '아이디어 수집 중', text: '새로운 공략이나 편의 기능 아이디어는 단백질쿠키 오픈채팅방에 자유롭게 남겨주세요.' }
-  ],
+  notices: [],
   rules: [
     { title: '매일 출석하기', text: '길드 출석과 연구를 1만 전까지 해주세요.' },
     { title: '토벌전 참여하기', text: '시즌 기간동안 가능한 만큼 참여하고, 본인 투력 대비 3~400배는 쳐주세요!' },
@@ -89,10 +85,24 @@ function renderLinks(query = '') {
   emptyState.hidden = visibleCards > 0;
 }
 
-function renderNotices() {
-  noticeList.innerHTML = guildData.notices.map((notice, index) => `<article class="notice-item">
-    <span class="notice-item__number">0${index + 1}</span><div><h3>${escapeHtml(notice.title)}</h3><p>${escapeHtml(notice.text)}</p></div>
-  </article>`).join('');
+// 아까 복사한 구글 웹 앱 URL을 따옴표 사이에 그대로 붙여넣으세요!
+const NOTION_API_URL = 'https://script.google.com/macros/s/AKfycbxR1tM6wfKcnhzfX4F5iQ1eM6ynhyI8pD4SFpyKuWY7FJIWztYM8XzK9uK8WDIBje3E/exec';
+
+async function renderNotices() {
+  try {
+    const response = await fetch(NOTION_API_URL);
+    const noticesData = await response.json();
+    
+    guildData.notices = noticesData;
+
+    noticeList.innerHTML = guildData.notices.map((notice, index) => `<article class="notice-item">
+      <span class="notice-item__number">0${index + 1}</span><div><h3>${escapeHtml(notice.title)}</h3><p>${escapeHtml(notice.text)}</p></div>
+    </article>`).join('');
+    
+  } catch (error) {
+    console.error('공지를 불러오는 데 실패했습니다:', error);
+    noticeList.innerHTML = `<p style="padding: 20px; color: #76636b;">공지를 불러오는 중 문제가 발생했습니다.</p>`;
+  }
 }
 
 function renderRules() {
