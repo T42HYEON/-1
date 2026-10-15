@@ -122,20 +122,20 @@ function renderLinks(query = '') {
         <span class="link-group__count">${String(items.length).padStart(2, '0')} LINKS</span>
       </div>
       <div class="link-cards">${items.map((item) => {
-  if (item.url === '#modal') {
-  // dungeons 데이터를 JSON 문자열로 안전하게 변환해서 함수에 넘겨줍니다
-  const dungeonsJson = encodeURIComponent(JSON.stringify(item.dungeons || []));
-  return `<a class="link-card" href="#" onclick="openModalGroup('${dungeonsJson}'); return false;">
-    <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">모음</span></div>
-    <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
-  </a>`;
-} else {
-    return `<a class="link-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
-      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
-      <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
-    </a>`;
-  }
-}).join('')}</div>
+        // ★ 핵심 포인트: url이 #modal이면 팝업을 띄우고 return false로 페이지 위로 튀는 현상을 막아줍니다.
+        if (item.url === '#modal') {
+          const dungeonsJson = encodeURIComponent(JSON.stringify(item.dungeons || []));
+          return `<a class="link-card" href="#" onclick="openModalGroup('${escapeHtml(item.title)}', '${dungeonsJson}'); return false;">
+            <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">팝업</span></div>
+            <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
+          </a>`;
+        } else {
+          return `<a class="link-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+            <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
+            <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
+          </a>`;
+        }
+      }).join('')}</div>
     </article>`;
   }).join('');
   emptyState.hidden = visibleCards > 0;
