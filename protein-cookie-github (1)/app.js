@@ -33,7 +33,7 @@ const guildData = {
       icon: '▦',
       wide: true,
       items: [
-        { title: '경험치던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png' },
+        { title: '경험치던전', description: '손컨X (클릭하여 보기)', tag: 'DAILY', url: '#modal', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png' },
         { title: '반죽던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png' },
         { title: '코인던전', description: '시작하고 2시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-a417f6dd-1b59-4f18-86b3-e07aea160cd3.png' },
         { title: '연구석던전', description: '시작하고 7시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png' },
@@ -77,10 +77,19 @@ function renderLinks(query = '') {
         <div class="link-group__title"><span class="link-group__icon" aria-hidden="true">${escapeHtml(group.icon)}</span><h3>${escapeHtml(group.title)}</h3></div>
         <span class="link-group__count">${String(items.length).padStart(2, '0')} LINKS</span>
       </div>
-      <div class="link-cards">${items.map((item) => `<a class="link-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
-        <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
-        <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
-      </a>`).join('')}</div>
+      <div class="link-cards">${items.map((item) => {
+  if (item.url === '#modal') {
+    return `<a class="link-card" href="#" onclick="openModal('${escapeHtml(item.title)}', '${escapeHtml(item.description)}', '${escapeHtml(item.imgUrl)}'); return false;">
+      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">팝업</span></div>
+      <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
+    </a>`;
+  } else {
+    return `<a class="link-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
+      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
+      <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
+    </a>`;
+  }
+}).join('')}</div>
     </article>`;
   }).join('');
   emptyState.hidden = visibleCards > 0;
@@ -164,5 +173,34 @@ if (scrollTopBtn) {
       top: 0,
       behavior: 'smooth'
     });
+  });
+}
+// --- 이미지 팝업 모달 제어 기능 ---
+const modal = document.querySelector('#imageModal');
+const modalClose = document.querySelector('#modalClose');
+const modalTitle = document.querySelector('#modalTitle');
+const modalDesc = document.querySelector('#modalDesc');
+const modalImg = document.querySelector('#modalImg');
+
+function openModal(title, desc, imgUrl) {
+  if (modal) {
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalImg.src = imgUrl;
+    modal.style.display = 'flex';
+  }
+}
+
+if (modalClose) {
+  modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+}
+
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
   });
 }
