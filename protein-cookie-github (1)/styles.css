@@ -179,3 +179,52 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
     font-size: 14px;
   }
 }
+
+/* --- 이미지 팝업 모달 스타일 --- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal__content {
+  position: relative;
+  width: min(500px, 100%);
+  background: var(--bg-raised, #171a28);
+  border: 1px solid var(--line, rgba(255, 255, 255, .11));
+  border-radius: var(--radius, 22px);
+  padding: 24px;
+  color: var(--ink);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  text-align: center;
+}
+.modal__content h3 {
+  margin: 0 0 8px;
+  font-family: Jua, sans-serif;
+  font-size: 22px;
+}
+.modal__content p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.modal__content img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+}
