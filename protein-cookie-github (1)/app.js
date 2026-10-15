@@ -134,3 +134,24 @@ document.querySelectorAll('.anchor-nav__item').forEach((link) => {
     link.classList.add('is-active');
   });
 });
+// --- 맨 위로 가기 버튼 기능 ---
+const scrollTopBtn = document.querySelector('#scrollTopBtn');
+
+if (scrollTopBtn) {
+  // 1. 스크롤을 조금이라도 내리면 버튼이 나타나고, 맨 위에 있으면 숨김
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopBtn.classList.add('is-visible');
+    } else {
+      scrollTopBtn.classList.remove('is-visible');
+    }
+  });
+
+  // 2. 버튼을 클릭하면 페이지 맨 위로 부드럽게 스크롤
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
