@@ -228,3 +228,15 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
   cursor: pointer;
   line-height: 1;
 }
+/* 팝업창 내부 부가 설명 스타일 */
+.modal__extra-desc {
+  margin-top: 14px;
+  padding: 12px;
+  background: var(--bg, #10121d);
+  border: 1px solid var(--line, rgba(255, 255, 255, .11));
+  border-radius: 12px;
+  color: var(--muted-strong, #d1d1dd);
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: left; /* 설명글이 길어지면 보기 편하게 왼쪽 정렬 */
+}
