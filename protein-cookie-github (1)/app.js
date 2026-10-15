@@ -68,11 +68,25 @@ const guildData = {
 },
         { 
           title: '길드토벌전', 
-          description: '토벌전 덱 및 공략 (클릭)', 
+          description: '토벌전 덱, 공격력 순위 및 슈가룬 세팅 (클릭)', 
           tag: 'GUILDBATTLE', 
           url: '#modal',
           dungeons: [
-            { name: '길드토벌전 덱', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png', desc: '• 토벌전 고득점을 위한 추천 덱 구성입니다.<br>• 본인 투력에 맞게 최대한 참여해 주세요!' }
+            { 
+              name: '길드토벌전 덱', 
+              imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png', 
+              desc: '• 토벌전 고득점을 위한 추천 덱 구성입니다.<br>• 본인 투력에 맞게 최대한 참여해 주세요!' 
+            },
+            { 
+              name: '토벌전 공격력 순위', 
+              imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-8f4493a2-3194-4d88-901c-d17f4d39a657.png', 
+              desc: '• 토벌전 캐릭터별 공격력 순위표입니다.<br>• 3순위는 시작하자마자 석류버프를 받고 4순위는 나중에 받는데요.' 
+            },
+            { 
+              name: '토벌전 슈가룬 세팅', 
+              imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-2a62ae56-0429-44e3-bad3-ce0a95314ca6.png', 
+              desc: '• 토벌전 진행 시 필요한 슈가룬 세팅 정보입니다.<br>• 슈가슈가룬~ 쇼코쇼코룬~' 
+            }
           ]
         },
         { 
