@@ -282,3 +282,36 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
   font-size: 11px;
   line-height: 1.5;
 }
+/* --- 홈페이지 맞춤형 커스텀 스크롤바 스타일 --- */
+
+/* 1. 웹사이트 전체 화면 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px; /* 스크롤바 두께 */
+}
+::-webkit-scrollbar-track {
+  background: var(--bg, #10121d); /* 스크롤바 배경색 (홈페이지 배경과 맞춤) */
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); /* 스크롤바 손잡이 기본 색상 */
+  border-radius: 99px; /* 동글동글하게 처리 */
+  border: 2px solid var(--bg, #10121d); /* 손잡이 주변 여백 느낌 */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--orange, #ff9c61); /* 마우스를 올렸을 때 홈페이지 포인트 색상(오렌지)으로 변화 */
+}
+
+/* 2. 팝업창 내부 스크롤바 (일일던전, 토벌전 등 모달 바디) */
+.modal__body::-webkit-scrollbar {
+  width: 6px;
+}
+.modal__body::-webkit-scrollbar-track {
+  background: var(--bg-raised, #171a28);
+  border-radius: 4px;
+}
+.modal__body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+.modal__body::-webkit-scrollbar-thumb:hover {
+  background: var(--orange, #ff9c61);
+}
