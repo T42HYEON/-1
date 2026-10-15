@@ -33,7 +33,14 @@ const guildData = {
       icon: '▦',
       wide: true,
       items: [
-        { title: '경험치던전', description: '손컨X (클릭하여 보기)', tag: 'DAILY', url: '#modal', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png' },
+        { 
+  title: '경험치던전', 
+  description: '손컨X (클릭하여 보기)', 
+  tag: 'DAILY', 
+  url: '#modal', 
+  imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png',
+  extraDesc: '• 배치 팁: 중앙 기둥을 기준으로 좌우 배치를 다르게 하세요.<br>• 주의사항: 스킬 쿨타임 관리가 중요합니다.' 
+},
         { title: '반죽던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png' },
         { title: '코인던전', description: '시작하고 2시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-a417f6dd-1b59-4f18-86b3-e07aea160cd3.png' },
         { title: '연구석던전', description: '시작하고 7시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png' },
@@ -79,11 +86,11 @@ function renderLinks(query = '') {
       </div>
       <div class="link-cards">${items.map((item) => {
   if (item.url === '#modal') {
-    return `<a class="link-card" href="#" onclick="openModal('${escapeHtml(item.title)}', '${escapeHtml(item.description)}', '${escapeHtml(item.imgUrl)}'); return false;">
-      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
-      <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
-    </a>`;
-  } else {
+  return `<a class="link-card" href="#" onclick="openModal('${escapeHtml(item.title)}', '${escapeHtml(item.description)}', '${escapeHtml(item.imgUrl)}', '${escapeHtml(item.extraDesc || '')}'); return false;">
+    <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">팝업</span></div>
+    <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
+  </a>`;
+} else {
     return `<a class="link-card" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">
       <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
       <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
@@ -181,12 +188,22 @@ const modalClose = document.querySelector('#modalClose');
 const modalTitle = document.querySelector('#modalTitle');
 const modalDesc = document.querySelector('#modalDesc');
 const modalImg = document.querySelector('#modalImg');
+const modalExtraDesc = document.querySelector('#modalExtraDesc'); // ★ 변수 추가
 
-function openModal(title, desc, imgUrl) {
+function openModal(title, desc, imgUrl, extraDesc) { // ★ extraDesc 추가
   if (modal) {
     modalTitle.textContent = title;
     modalDesc.textContent = desc;
     modalImg.src = imgUrl;
+    
+    // ★ 부가 설명이 있으면 넣고 없으면 숨기기
+    if (extraDesc) {
+      modalExtraDesc.innerHTML = extraDesc;
+      modalExtraDesc.style.display = 'block';
+    } else {
+      modalExtraDesc.style.display = 'none';
+    }
+
     modal.style.display = 'flex';
   }
 }
