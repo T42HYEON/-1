@@ -1,0 +1,9 @@
+{
+  "name": "protein-cookie-guild-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "[단백질쿠키] 길드 정보 공유소",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

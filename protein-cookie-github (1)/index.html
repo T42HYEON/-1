@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#11131f" />
+    <meta name="description" content="[단백질쿠키] 길드원들이 공지, 규칙, 공략 링크를 빠르게 확인하는 길드 정보 공유소" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f36a.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>[단백질쿠키] 길드 정보 공유소</title>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar" aria-label="상단 메뉴">
+        <a class="brand-mini" href="#top" aria-label="처음으로 이동">
+          <span class="brand-mini__mark">P</span>
+          <span>PROTEIN<br /><b>COOKIE</b></span>
+        </a>
+        <div class="topbar__actions">
+          <span class="online-pill"><i></i> 길드 허브</span>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="테마 전환" title="테마 전환">
+            <span aria-hidden="true">☼</span>
+          </button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section-pad" aria-labelledby="page-title">
+          <div class="hero__glow hero__glow--one"></div>
+          <div class="hero__glow hero__glow--two"></div>
+          <div class="hero__eyebrow"><span>GUILD RESOURCE HUB</span><span class="eyebrow-line"></span></div>
+          <div class="hero__layout">
+            <div class="hero__copy">
+              <div class="cookie-orbit" aria-hidden="true">
+                <span class="orbit-dot orbit-dot--a"></span><span class="orbit-dot orbit-dot--b"></span>
+                <span class="cookie-face"><i></i><i></i><b></b><em></em></span>
+              </div>
+              <p class="hero__kicker">단백질처럼 단단하게, 쿠키처럼 달콤하게</p>
+              <h1 id="page-title"><span>[단백질쿠키]</span><br />길드 정보 공유소</h1>
+              <p class="hero__desc">공지부터 길드전 덱까지,<br /><strong>오늘 필요한 정보만 빠르게</strong> 찾아보세요.</p>
+              <div class="hero__buttons">
+                <a class="button button--primary" href="#links"><span>자료 바로가기</span><span class="button-arrow">↗</span></a>
+                <a class="button button--quiet" href="#notice">공지 확인 <span>↓</span></a>
+              </div>
+            </div>
+            <div class="hero__note" aria-label="길드 메모">
+              <div class="note-tape">GUILD NOTE</div>
+              <p class="note-quote">“좋은 아이디어는<br /><strong>언제나 알려주세요!</strong>”</p>
+              <div class="note-meta"><span>OPEN CHAT</span><span>·</span><span>2026.10.15</span></div>
+              <div class="note-sticker">✦<br /><small>함께<br />성장해요</small></div>
+            </div>
+          </div>
+          <div class="hero__stats" aria-label="허브 안내">
+            <div><b>03</b><span>자료 보관함</span></div>
+            <div><b>24H</b><span>빠른 공지 확인</span></div>
+            <div><b>∞</b><span>아이디어 환영</span></div>
+          </div>
+        </section>
+
+        <nav class="anchor-nav" aria-label="페이지 바로가기">
+          <a class="anchor-nav__item is-active" href="#links"><span>✦</span> 자료 모음</a>
+          <a class="anchor-nav__item" href="#notice"><span>!</span> 공지</a>
+          <a class="anchor-nav__item" href="#rules"><span>✓</span> 규칙</a>
+        </nav>
+
+        <section class="utility-row section-pad" aria-label="빠른 도구">
+          <div class="section-label"><span>QUICK ACCESS</span><i></i></div>
+          <label class="search-box" for="linkSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="linkSearch" type="search" placeholder="자료 이름으로 찾아보기" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+        </section>
+
+        <section class="links-section section-pad" id="links" aria-labelledby="links-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-overline">BOOKMARKS / 01</p>
+              <h2 id="links-title">길드 자료 모음 <span>↗</span></h2>
+            </div>
+            <p class="section-caption">자주 쓰는 곳은<br />여기에 모아두었어요.</p>
+          </div>
+          <div id="linkGroups" class="link-groups"></div>
+          <p id="emptyState" class="empty-state" hidden>찾으시는 자료가 없어요. 다른 키워드로 검색해 보세요.</p>
+          <div class="edit-tip"><span>✎</span><p><b>링크를 바꾸고 싶다면?</b><br />app.js 상단 <code>guildData.links</code>만 수정하면 카드가 바로 바뀌어요.</p></div>
+        </section>
+
+        <section class="notice-section section-pad" id="notice" aria-labelledby="notice-title">
+          <div class="section-heading section-heading--compact">
+            <div>
+              <p class="section-overline">BULLETIN / 02</p>
+              <h2 id="notice-title">이번 주 공지 <span class="live-dot"></span></h2>
+            </div>
+            <span class="updated-label">LAST UPDATE · 10.15</span>
+          </div>
+          <div class="notice-board">
+            <div class="notice-board__top"><span class="pin">●</span><span>OPEN CHAT SUMMARY</span><span class="notice-board__line"></span><span>01</span></div>
+            <div id="noticeList" class="notice-list"></div>
+          </div>
+        </section>
+
+        <section class="rules-section section-pad" id="rules" aria-labelledby="rules-title">
+          <div class="section-heading section-heading--compact">
+            <div>
+              <p class="section-overline">PLAY NICE / 03</p>
+              <h2 id="rules-title">우리 길드 약속 <span>♢</span></h2>
+            </div>
+            <span class="rules-badge">함께 지켜요</span>
+          </div>
+          <div id="rulesGrid" class="rules-grid"></div>
+        </section>
+
+        <section class="idea-card section-pad" aria-labelledby="idea-title">
+          <div class="idea-card__sparkle">✦</div>
+          <div><p class="section-overline">A LITTLE NOTE</p><h2 id="idea-title">더 좋은 방법이<br /><em>있다면 알려주세요.</em></h2></div>
+          <p>공략, 시트, 편의 기능 등<br />길드에 필요한 아이디어를 모아요.</p>
+          <a href="https://open.kakao.com/o/guild-example" target="_blank" rel="noopener noreferrer" class="text-link">오픈채팅방에서 말하기 <span>↗</span></a>
+        </section>
+      </main>
+
+      <footer class="footer section-pad">
+        <div class="footer__brand"><span class="brand-mini__mark">P</span><span><b>단백질쿠키</b><small>GUILD RESOURCE HUB</small></span></div>
+        <p>길드원 모두가 편하게 쓰는 작은 정보 창고</p>
+        <span class="footer__line"></span>
+        <p class="footer__copyright">MADE WITH COOKIE ENERGY · 2026</p>
+      </footer>
+    </div>
+
+    <a class="floating-chat" href="https://open.kakao.com/o/guild-example" target="_blank" rel="noopener noreferrer" aria-label="길드 오픈채팅방 참여하기">
+      <span class="floating-chat__icon">⌁</span><span class="floating-chat__text">오픈채팅방<br /><b>참여하기</b></span><span class="floating-chat__arrow">↗</span>
+    </a>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
