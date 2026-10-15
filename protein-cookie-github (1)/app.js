@@ -33,8 +33,12 @@ const guildData = {
       icon: '▦',
       wide: true,
       items: [
-        { title: '일일던전 덱 추천', description: '던전별로 오토덱 또는 편한 덱 추천', tag: 'CRUMBLEFUN', url: 'https://crumbles.fun/builder?team=v2.0z24131016111v1m1g1b1k1r~020110&name=경험치던전+오토덱&leader=milk-pediatrician&perks=passion-pay,fast-promotion' },
-        { title: '새 Google Sheets 만들기', description: '양식을 가져올 빈 시트 만들기', tag: 'GOOGLE SHEETS', url: 'https://docs.google.com/spreadsheets/create' }
+        { title: '경험치던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-f070db28-e7ca-4004-8721-924d8bfec949.png' },
+        { title: '반죽던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-bc52451a-cc25-4b45-93f1-515242deee0f.png' },
+        { title: '코인던전', description: '시작하고 2시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-a417f6dd-1b59-4f18-86b3-e07aea160cd3.png' },
+        { title: '연구석던전', description: '시작하고 7시방향', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-2b6811f8-c0ee-46cf-97a2-63d18d7619d6.png' },
+        { title: '룬결정던전', description: '손컨X', tag: 'DAILY', url: 'https://cdn.phototourl.com/member/2026-10-15-79642bfc-7386-43c2-ad67-13505be044c2.png' },
+        { title: '길드토벌전', description: '토벌전 덱 입니다', tag: 'GUILDBATTLE', url: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png' },
       ]
     }
   ],
@@ -45,7 +49,7 @@ const guildData = {
   ],
   rules: [
     { title: '매일 출석하기', text: '길드 출석과 연구를 1만 전까지 해주세요.' },
-    { title: '토벌전 참여하기', text: '시즌 기간동안 가능한 만큼 참여하고, 본인 투력에 맞게끔은 쳐주세요!' },
+    { title: '토벌전 참여하기', text: '시즌 기간동안 가능한 만큼 참여하고, 본인 투력 대비 3~400배는 쳐주세요!' },
     { title: '서로 배려하기', text: '실수는 괜찮아요. 질문과 피드백은 따뜻하게, 좋은 정보는 함께 나눠요.' }
   ]
 };
