@@ -66,8 +66,24 @@ const guildData = {
     }
   ]
 },
-        { title: '길드토벌전', description: '토벌전 덱 입니다', tag: 'GUILDBATTLE', url: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png' },
-        { title: '장비프리셋', description: '스테이지, 길드토벌전 장비 추천입니다', tag: 'EQUIPMENT', url: 'https://cdn.phototourl.com/member/2026-10-15-3e46ca52-8bd4-417e-91cf-34e0e34e8664.png' },
+        { 
+          title: '길드토벌전', 
+          description: '토벌전 덱 및 공략 (클릭)', 
+          tag: 'GUILDBATTLE', 
+          url: '#modal',
+          dungeons: [
+            { name: '길드토벌전 덱', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-e3082581-8d99-40c0-8198-ea29d59f39c8.png', desc: '• 토벌전 고득점을 위한 추천 덱 구성입니다.<br>• 본인 투력에 맞게 최대한 참여해 주세요!' }
+          ]
+        },
+        { 
+          title: '장비프리셋', 
+          description: '스테이지, 길드토벌전 장비 추천 (클릭)', 
+          tag: 'EQUIPMENT', 
+          url: '#modal',
+          dungeons: [
+            { name: '장비 프리셋 모음', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-3e46ca52-8bd4-417e-91cf-34e0e34e8664.png', desc: '• 스테이지 및 길드토벌전 장비 세팅 추천 가이드입니다.<br>• 상황에 맞게 프리셋을 변경해 보세요.' }
+          ]
+        },
       ]
     }
   ],
@@ -209,12 +225,15 @@ if (scrollTopBtn) {
 const modal = document.querySelector('#imageModal');
 const modalClose = document.querySelector('#modalClose');
 const modalBody = document.querySelector('#modalBody');
+const modalTitle = document.querySelector('#modalTitle'); // ★ 제목 변경용 변수 추가
 
-function openModalGroup(encodedJson) {
+function openModalGroup(title, encodedJson) { // ★ title 파라미터 추가
   if (modal && modalBody) {
     const dungeons = JSON.parse(decodeURIComponent(encodedJson));
     
-    // 5개 던전의 HTML을 반복문으로 싹 만들어서 모달창 바디에 채워넣기
+    // ★ 팝업창 상단 제목을 클릭한 카드의 이름으로 변경
+    if (modalTitle) modalTitle.textContent = title;
+
     modalBody.innerHTML = dungeons.map(d => `
       <div class="modal-item">
         <h4>${escapeHtml(d.name)}</h4>
