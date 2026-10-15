@@ -107,8 +107,10 @@ function renderLinks(query = '') {
       </div>
       <div class="link-cards">${items.map((item) => {
   if (item.url === '#modal') {
-  return `<a class="link-card" href="#" onclick="openModal('${escapeHtml(item.title)}', '${escapeHtml(item.description)}', '${escapeHtml(item.imgUrl)}', '${escapeHtml(item.extraDesc || '')}'); return false;">
-    <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">팝업</span></div>
+  // dungeons 데이터를 JSON 문자열로 안전하게 변환해서 함수에 넘겨줍니다
+  const dungeonsJson = encodeURIComponent(JSON.stringify(item.dungeons || []));
+  return `<a class="link-card" href="#" onclick="openModalGroup('${dungeonsJson}'); return false;">
+    <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">모음</span></div>
     <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
   </a>`;
 } else {
@@ -206,24 +208,20 @@ if (scrollTopBtn) {
 // --- 이미지 팝업 모달 제어 기능 ---
 const modal = document.querySelector('#imageModal');
 const modalClose = document.querySelector('#modalClose');
-const modalTitle = document.querySelector('#modalTitle');
-const modalDesc = document.querySelector('#modalDesc');
-const modalImg = document.querySelector('#modalImg');
-const modalExtraDesc = document.querySelector('#modalExtraDesc'); // ★ 변수 추가
+const modalBody = document.querySelector('#modalBody');
 
-function openModal(title, desc, imgUrl, extraDesc) { // ★ extraDesc 추가
-  if (modal) {
-    modalTitle.textContent = title;
-    modalDesc.textContent = desc;
-    modalImg.src = imgUrl;
+function openModalGroup(encodedJson) {
+  if (modal && modalBody) {
+    const dungeons = JSON.parse(decodeURIComponent(encodedJson));
     
-    // ★ 부가 설명이 있으면 넣고 없으면 숨기기
-    if (extraDesc) {
-      modalExtraDesc.innerHTML = extraDesc;
-      modalExtraDesc.style.display = 'block';
-    } else {
-      modalExtraDesc.style.display = 'none';
-    }
+    // 5개 던전의 HTML을 반복문으로 싹 만들어서 모달창 바디에 채워넣기
+    modalBody.innerHTML = dungeons.map(d => `
+      <div class="modal-item">
+        <h4>${escapeHtml(d.name)}</h4>
+        <img src="${escapeHtml(d.imgUrl)}" alt="${escapeHtml(d.name)}">
+        <div class="modal__extra-desc">${d.desc}</div>
+      </div>
+    `).join('');
 
     modal.style.display = 'flex';
   }
