@@ -80,7 +80,7 @@ function renderLinks(query = '') {
       <div class="link-cards">${items.map((item) => {
   if (item.url === '#modal') {
     return `<a class="link-card" href="#" onclick="openModal('${escapeHtml(item.title)}', '${escapeHtml(item.description)}', '${escapeHtml(item.imgUrl)}'); return false;">
-      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">팝업</span></div>
+      <div class="link-card__top"><h4>${escapeHtml(item.title)}</h4><span class="link-card__arrow" aria-hidden="true">↗</span></div>
       <p>${escapeHtml(item.description)}</p><span class="link-card__tag">${escapeHtml(item.tag)}</span>
     </a>`;
   } else {
