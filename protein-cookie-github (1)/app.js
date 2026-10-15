@@ -1,4 +1,4 @@
-/*
+  /*
  * 길드 콘텐츠 편집 안내
  * ---------------------
  * 외부 링크는 아래 guildData.links 한 곳에서 제목·설명·URL을 바꾸면 됩니다.
@@ -81,7 +81,7 @@ const guildData = {
           tag: 'EQUIPMENT', 
           url: '#modal',
           dungeons: [
-            { name: '장비 프리셋 모음', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-3e46ca52-8bd4-417e-91cf-34e0e34e8664.png', desc: '• 스테이지 및 길드토벌전 장비 세팅 추천 가이드입니다.<br>• 상황에 맞게 프리셋을 변경해 보세요.' }
+            { name: '장비 프리셋 모음', imgUrl: 'https://cdn.phototourl.com/member/2026-10-15-3e46ca52-8bd4-417e-91cf-34e0e34e8664.png', desc: '• 스테이지 및 길드토벌전 장비 세팅 추천 가이드입니다.<br>• 아레나장비는 토벌전 C에서 체력3이 아닌 치저3을 선택하면 됩니다.' }
           ]
         },
       ]
