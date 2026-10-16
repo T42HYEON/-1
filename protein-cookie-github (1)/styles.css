@@ -321,3 +321,15 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
 .light .hero__eyebrow span:first-child {
   color: #d96b27 !important; /* 라이트모드 배경에서 눈에 확 띄는 진한 주황/구리빛 색상 */
 }
+/* --- 라이트모드에서 배경과 겹쳐 안 보이는 살색/밝은 포인트 텍스트들을 진한 주황색으로 보정 --- */
+.light #page-title span,
+.light .section-overline,
+.light .hero__eyebrow span:first-child,
+.light .hero__kicker,
+.light .section-caption,
+.light .notice-board__top span,
+.light .updated-label,
+.light .rules-badge,
+.light .footer__brand small {
+  color: #d96b27 !important; /* 라이트모드일 때만 가독성 좋은 진한 주황색으로 변경 */
+}
