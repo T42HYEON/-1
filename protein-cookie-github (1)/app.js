@@ -4,6 +4,30 @@
  * 외부 링크는 아래 guildData.links 한 곳에서 제목·설명·URL을 바꾸면 됩니다.
  * 공지와 규칙도 같은 방식으로 수정할 수 있어요.
  */
+/* --- 속성, 희귀도, 역할별 아이콘 이미지 주소 사전 --- */
+const iconMap = {
+  rarity: {
+    "TSSR": "https://i.namu.wiki/i/1bXceUDTa3j4SeddOTPQqnO517EL…hQKk75tGDgZwM8oAQLcC6GfSP2f5eXbzHW_Sb9waQOKA.webp",
+    "SSR": "https://i.namu.wiki/i/O3TrkSQSepqYG7toPYbtpX4GsZFt…ekwqp5Y6Tes2tqH_GC2Z0qQzIdnIvgc-l_nbnxMoIqpg.webp",
+    "SR": "https://i.namu.wiki/i/8Ca8JGt_LoK2JCVa_7C8JH3ywalz…DzxkCHf8Rxufykj4NtWwTv65hnQ2NC0L6c7FNnTzIAyw.webp",
+    "R": "https://i.namu.wiki/i/HXooiMIKxFnlOV79GDKDOYNPEw0v…NA-mq8UZ3v0n3j8TJRSugOSZTGnmF-69LMyN2EtCxItw.webp",
+    "U": "https://i.namu.wiki/i/pNSNXBB92j6IYV88WNkdg92ySVQP…bX-TB4MBe5_VLqbo5GG9Yx2VgbB2o-5DRw-2OjBkpu5A.webp",
+    "C": "https://i.namu.wiki/i/TCY5YOAkSp79bYzoD7FBLt9y4UXP…vEUGXi37vJbCBX6AB1McTMLx7WAco9Ot044tbF6qt4Og.webp"
+  },
+  element: {
+    "fire": "https://i.namu.wiki/i/a4VRkbuT__9Lc4HG3KwBAVuJB5Rw…GWx4Sx-i0bXzJ1cr_e9gW2pZlnbC2WCDUFR3BhtW3vAQ.webp",
+    "water": "https://i.namu.wiki/i/9inRw6FrWCNuGPbuO5JnpTI_F-lR…sbOEcX627iQEDsu9hdLweEDnHJtO36jZcY2Qz2ulVz0w.webp",
+    "grass": "https://i.namu.wiki/i/wl0EFDdewQJ-ALlBIX7c8slAy4I0…v5-vkQ2Q9MEbJ9Seg5sYhy2qsieCnnK9Z12ny5nrhrRw.webp",
+    "light": "https://i.namu.wiki/i/M4Rbo6cuEnmlKfbPf7c2bZANLuyg…v7jbZyJPVHsclZSODmciYcxxZkG-Uxa8PHs9GZ3d7mhQ.webp",
+    "dark": "https://i.namu.wiki/i/O_YmcLWr8XnKRFnNqAEGtyo8oE6j…4cbmTp4er-HNvVyR2OxyY8oDWRoCPe-tG0cA5AKlGa-Q.webp"
+  },
+  role: {
+    "defender": "https://i.namu.wiki/i/DW1nzJ9TwnsLFcYs-zv7uiot_PJ-…UwL4QMroqkZTTWSiL6ZFcLtdyoKMWbKTq0A84NBNY6Lw.webp",
+    "striker": "https://i.namu.wiki/i/P4tUglJs1secrGocxsJdLV4CyE2-…5eHVtcLVTWn1aJBQVh2YMWk79KX83y2ZZ0bDGtwsnqeQ.webp",
+    "shooter": "https://i.namu.wiki/i/PDv1D1f2fY0sQwwncWLSbcEpKNHc…6SgMqHQsaaUmofQnXVuuWuXp0uefPx65zBO1rQXh-DXw.webp",
+    "supporter": "https://i.namu.wiki/i/UtfRsdIpVXs7SjuP4mKOFWsueRlF…lYx5zK5ZhpuPYALWbUYx0dFWUMSlfDW-gfvpedV3-jhw.webp"
+  }
+};
 const guildData = {
   links: [
     {
