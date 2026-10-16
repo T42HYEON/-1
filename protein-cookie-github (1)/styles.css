@@ -315,3 +315,9 @@ h1 span { color: var(--cream); font-size: .48em; letter-spacing: -.04em; }
 .modal__body::-webkit-scrollbar-thumb:hover {
   background: var(--orange, #ff9c61);
 }
+/* --- 라이트모드에서 '[단백질쿠키]' 강조 텍스트 가독성 개선 --- */
+.light #page-title span,
+.light .section-overline,
+.light .hero__eyebrow span:first-child {
+  color: #d96b27 !important; /* 라이트모드 배경에서 눈에 확 띄는 진한 주황/구리빛 색상 */
+}
